@@ -1,0 +1,14 @@
+body {
+	padding-top: 5rem;
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100%;
+    width: 100vw;
+}
+
+.main_app {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
