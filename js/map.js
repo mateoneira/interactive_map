@@ -1,7 +1,8 @@
 var mymap = L.map('map').setView([51.505, -0.09], 13);
 
-$.getJSON("./data/london_hexagons.geojson", function(json) {
+$.getJSON("https://raw.githubusercontent.com/mateoneira/interactive_map/master/data/london_hexagons.geojson?token=AJ7APAGm-5HZjCsQqnY5q0lvip7KElaKks5co1_YwA%3D%3D", function(json) {
     console.log(json); // this will show the info it in firebug console
+    L.geoJSON(json).addTo(mymap);
 });
 
 
