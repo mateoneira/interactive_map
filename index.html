@@ -10,20 +10,28 @@
 
 		<link rel="stylesheet" href="./css/style.css">
 
-		<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
 	    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.js"></script>
 	    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
 
 
 		
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   			<a class="navbar-brand" href="#">Employee accommodation: exploratory tool</a>
   		</nav>
-
-		<div id="map" class="main_app"></div>
+  		<div class="main_app">
+  			<div class="control_panel">
+  				<h5 class="text_slider">rent</h5>
+  				<div id="slider" class="map_slider"></div>
+				<!-- <input type="number" min='1' max = '1000' id="input_number"> -->
+  			</div>
+			<div id="map"></div>
+		</div>
 
 		<script
 		  src="https://code.jquery.com/jquery-3.3.1.min.js"
