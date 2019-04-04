@@ -16,27 +16,40 @@
 }
 
 .map_slider{
-	position: relative;
-	top: 100px;
+	display: inline-block;
 	width: 80%;
 	height: 10%;
-	z-index: 99;
 }
 
-.text_slider{
-	position: relative;
-	top: 100px;
-	text-align: left;
-	width: 80%;
+.map_slider_text{
+	display: inline-block;
+	width: 20%;
 	height: 10%;
-	z-index: 99;
-	color: white;
+	text-align: center;
+	vertical-align: text-top;
+
 }
 
 .control_panel{
 	position: absolute;
-	right: 0px;
+	top: 65px;
+	right: 10px;
 	width: 30vw;
+	bottom: 20px;
 	z-index: 99;
+	padding: 10px;
+	background-color: #20202080
 }
 
+.control_title{
+	color: #fff;
+	position: relative;
+	width: 100%;
+}
+
+.control_content{
+	color: white;
+	min-height: 100px;
+	position: relative;
+	text-align: left;
+}

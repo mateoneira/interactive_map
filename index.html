@@ -26,9 +26,16 @@
   		</nav>
   		<div class="main_app">
   			<div class="control_panel">
-  				<h5 class="text_slider">rent</h5>
-  				<div id="slider" class="map_slider"></div>
-				<!-- <input type="number" min='1' max = '1000' id="input_number"> -->
+  				<div class="control_title">
+  					<h2>Controls</h2>
+  				</div>
+  				<div class="control_content">
+	  				<h5>rent</h5>
+	  				<label class="radio-inline"><input type="radio" name="rent" value="Studio" checked>Studio</label>
+	  				<label class="radio-inline"><input type="radio" name="rent" value="Room">Room</label>
+	  				<label class="radio-inline"><input type="radio" name="rent" value="One Bedroom">One Bedroom</label>
+	  				<div id="slider" class="map_slider"></div><div class="map_slider_text">35</div>
+	  			</div>
   			</div>
 			<div id="map"></div>
 		</div>
