@@ -34,7 +34,7 @@
 	position: absolute;
 	top: 65px;
 	right: 10px;
-	width: 30vw;
+	width: 40vw;
 	bottom: 20px;
 	z-index: 99;
 	padding: 10px;
@@ -48,6 +48,7 @@
 }
 
 .control_content{
+	padding-top: 20px;
 	color: white;
 	min-height: 100px;
 	position: relative;

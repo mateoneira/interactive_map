@@ -22,23 +22,26 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  			<a class="navbar-brand" href="#">Employee accommodation: exploratory tool</a>
+  			<a class="navbar-brand" href="#">Employee accommodation:</a>
   		</nav>
   		<div class="main_app">
   			<div class="control_panel">
   				<div class="control_title">
-  					<h2>Controls</h2>
+  					<h3>User preference</h3>
   				</div>
   				<div class="control_content">
-	  				<h5>rent</h5>
+	  				<h5>Median rent price</h5>
 	  				<label class="radio-inline"><input type="radio" name="rent" value="Studio" checked>Studio</label>
 	  				<label class="radio-inline"><input type="radio" name="rent" value="Room">Room</label>
 	  				<label class="radio-inline"><input type="radio" name="rent" value="One Bedroom">One Bedroom</label>
-	  				<div id="rent_slider" class="map_slider"></div><div id='rent_value' class="map_slider_text">35 </div>
+	  				<label class="radio-inline"><input type="radio" name="rent" value="Two Bedrooms">Two Bedrooms</label>
+	  				<label class="radio-inline"><input type="radio" name="rent" value="Three Bedrooms">Three Bedrooms</label>
+	  				<label class="radio-inline"><input type="radio" name="rent" value="Four or More Bedrooms">Four Bedroom</label>
+	  				<div id="rent_slider" class="map_slider"></div><div id='rent_value' class="map_slider_text"> </div>
 	  			</div>
 			  	<div class="control_content">
 	  				<h5>Travel time to work</h5>
-	  				<div id="travel_slider" class="map_slider"></div><div id='travel_value' class="map_slider_text">35</div>
+	  				<div id="travel_slider" class="map_slider"></div><div id='travel_value' class="map_slider_text"></div>
 	  			</div>
   			</div>
 			<div id="map"></div>
