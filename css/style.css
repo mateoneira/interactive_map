@@ -54,3 +54,7 @@
 	position: relative;
 	text-align: left;
 }
+
+.btn-space {
+    margin-bottom: 5px;
+}

@@ -4,6 +4,8 @@ var travel_slidervar_secondary = document.getElementById('travel_slider_secondar
 var rent_value = 800
 var travel_time = 90
 var travel_time_2 = 120
+var select_destination = false
+var select_destinaton_2 = false
 var destination = '2548'
 var hex_data = []
 var brownfield_data = []
@@ -11,10 +13,12 @@ var mymap = L.map('map', {zoomControl:false}).setView([51.505, -0.09], 11);
 var brownfields = L.layerGroup().addTo(mymap);
 var polygons = L.featureGroup().addTo(mymap).on('click', 
     function(e) {
-        destination=e['layer']['feature']['properties']['id'];
-        polygons.clearLayers();
-        L.geoJSON(hex_data, {style: style}).addTo(polygons);
-
+        if (select_destination){
+            destination=e['layer']['feature']['properties']['id'];
+            polygons.clearLayers();
+            L.geoJSON(hex_data, {style: style}).addTo(polygons);
+            select_destination=false;
+        }
     });
 var rent_property = "Studio"
 
@@ -111,6 +115,10 @@ function style(feature) {
         dashArray: '3',
         fillOpacity: 0.3
     };
+}
+
+function set_destination() {
+    select_destination = true
 }
 
 
