@@ -1,20 +1,31 @@
-var slidervar = document.getElementById('slider');
-var value = 800
+var rent_slidervar = document.getElementById('rent_slider');
+var travel_slidervar = document.getElementById('travel_slider');
+var rent_value = 800
+var travel_time = 90
 var data = []
 var mymap = L.map('map', {zoomControl:false}).setView([51.505, -0.09], 11);
 var polygons = L.layerGroup().addTo(mymap);
 var rent_property = "Studio"
 
-noUiSlider.create(slider, {
-    start: [value],
+noUiSlider.create(rent_slider, {
+    start: [rent_value],
     range: {
         'min': 0,
         'max': 3000
     },
 });
 
-slidervar.noUiSlider.on('update', function(values, handle){
-	value = values[0]
+noUiSlider.create(travel_slider, {
+    start: [travel_time],
+    range: {
+        'min': 0,
+        'max': 160
+    },
+});
+
+rent_slidervar.noUiSlider.on('update', function(values, handle){
+	rent_value = values[0]
+    document.getElementById('rent_value').innerHTML =  Math.round(rent_value);
 	//clear layers
 	polygons.clearLayers();
 	L.geoJSON(data, {style: style}).addTo(polygons);
@@ -22,9 +33,18 @@ slidervar.noUiSlider.on('update', function(values, handle){
 
 })
 
+travel_slidervar.noUiSlider.on('update', function(values, handle){
+    travel_time = values[0]
+    document.getElementById('travel_value').innerHTML =  Math.round(travel_time);
+    // clear layers
+    polygons.clearLayers();
+    L.geoJSON(data, {style: style}).addTo(polygons);
+    //repopulate
+
+})
 
 // read json and add to map
-$.getJSON("https://raw.githubusercontent.com/mateoneira/interactive_map/6de3bea34524e767c6d5817b31f906fa98e2c31b/data/london_rent.geojson", function(json) {
+$.getJSON("https://raw.githubusercontent.com/mateoneira/interactive_map/2c0ca5328f3e3c499f9b017417101d1e7bae142d/data/london_rent.geojson", function(json) {
     console.log(json); // this will show the info it in firebug console
     data = json
     L.geoJSON(data, {style: style}).addTo(polygons);
@@ -41,14 +61,15 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 
 // function to colo mao
-function getColor(d) {
-    return d > value ? '#d7191c' :
-                      '#1a9641';
+function getColor(rent, travel) {
+    console.log(rent, travel)
+    return (rent < rent_value && travel<travel_time) ? '#1a9641' :
+                      '#d7191c';
 }
 
 function style(feature) {
     return {
-        fillColor: getColor(feature.properties[rent_property]),
+        fillColor: getColor(feature.properties[rent_property], feature.properties['travel_time']),
         weight: 1,
         opacity: 1,
         color: 'white',
