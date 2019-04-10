@@ -82,7 +82,7 @@ $.getJSON("https://raw.githubusercontent.com/mateoneira/interactive_map/db1e64c9
 
 
 // // read json and add to map
-$.getJSON("https://raw.githubusercontent.com/mateoneira/interactive_map/12219f7bdbb9304bc0632a32badb5bbdf4c324cc/data/london_rent.geojson", function(json) {
+$.getJSON("https://raw.githubusercontent.com/mateoneira/interactive_map/fab115d0d55ba676f1868c879de0198bd17b1f29/data/london_rent.geojson", function(json) {
     // console.log(json); // this will show the info it in firebug console
     hex_data = json
     L.geoJSON(hex_data, {style: style}).addTo(polygons);
